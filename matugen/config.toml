@@ -1,0 +1,26 @@
+[config]
+# ...
+
+
+[templates.hyprland]
+input_path = '~/.config/dotfiles/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/dotfiles/hypr/colors.conf'
+post_hook = 'hyprctl reload'
+
+
+[templates.kitty]
+input_path = '~/.config/dotfiles/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/dotfiles/kitty/colors.conf'
+post_hook = "kitty @ set-colors -a -c ~/.config/dotfiles/kitty/colors.conf"
+
+
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "center"]
+set = true
+
+
+[templates.waybar]
+input_path = '~/.config/dotfiles/matugen/templates/colors.css'
+output_path = '~/.config/dotfiles/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
