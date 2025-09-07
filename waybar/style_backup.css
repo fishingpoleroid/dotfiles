@@ -28,10 +28,6 @@
 @define-color pink #f5c2e7;
 @define-color flamingo #f2cdcd;
 @define-color rosewater #f5e0dc;
-@define-color black #000000;
-
-@define-color neongreen #00FA98;
-@define-color cpurple #BE00FA;
 
 @import "colors.css";
 
@@ -44,11 +40,16 @@
 }
 
 window#waybar {
-  background-color: @background;
-  color: @neongreen;
+  background-color: transparent;
+  color: @sapphire;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
 /*
 window#waybar.empty {
     background-color: transparent;
@@ -69,46 +70,44 @@ window#waybar.chromium {
 
 button {
   /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
   /* Avoid rounded borders under each button name */
   border: none;
-  border-radius: 11px;
-  color: @black;
-  padding: 2px 2px 2px 2px;
+  border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 
 #workspaces button:hover {
-  color: @cpurple;
-  box-shadow: @neongreen;
+  color: @error;
+  box-shadow: inherit;
   text-shadow: inherit;
-  background: @black;
-  box-shadow: inset 0 -3px transparent;
+  background: @background;
   border: @background;
 }
 
 #workspaces button.empty {
-  color: @black
+  color: @inverse_primary
 }
 
 #workspaces button {
   padding: 0 5px;
-  color: @white;
+  color: @inverse_primary;
   margin: 1px -1px 1px -1px;
   transition: color 200ms ease-in-out;
 }
 
 #workspaces button.selected {
-  color: @black;
+  color: @primary;
 }
 
 #workspaces button.active {
-  color: @neongreen;
+  color: @error;
   margin: 1px -6px 2px -1px
 }
 
 #workspaces button.urgent {
-  color: @black;
+  color: @error_container;
 }
 
 #clock,
@@ -157,7 +156,7 @@ button {
 }
 
 #clock {
-  color: @neongreen;
+  color: @primary;
 }
 
 #custom-pacman {
@@ -165,19 +164,19 @@ button {
 }
 
 #pulseaudio {
-  color: @neongreen;
+  color: @primary;
 }
 
 #pulseaudio.muted {
-  color: @neongreen;
+  color: @surface2;
 }
 
 #network {
-  color: @neongreen;
+  color: @primary;
 }
 
 #network.disconnected {
-  color: @neongreen;
+  color: @surface2;
 }
 
 #network.ethernet {
@@ -186,21 +185,21 @@ button {
 }
 
 #battery {
-  color: @neongreen;
+  color: @primary;
 }
 
 #battery.warning:not(.charging) {
-  color: @neongreen;
+  color: @error_container;
 }
 
 #custom-power {
-  color: @neongreen;
+  color: @error_container;
 }
 
 #bluetooth {
   margin-right: 10px;
   font-size: 17px;
-  color: @neongreen;
+  color: @primary;
 }
 
 #keyboard-state>label {
@@ -229,9 +228,9 @@ button {
 
 .modules-right {
   background-color: @background;
-  border-radius: 15px;
-  padding: 0 0 0 0;
-  margin: 5px 12px 2px 0;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin: 5px 10px 0 0;
 }
 
 #custom-spotify {
