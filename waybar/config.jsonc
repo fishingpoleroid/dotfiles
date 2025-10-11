@@ -1,17 +1,17 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
-    "height": 35,
+    "height": 20,
     // "width": 1900,
-    "spacing": 13,
+    "spacing": 10,
     "expand-center": false,
     "expand-left": true,
     "expand-right": true,
     "margin-top": -3,
     "margin-left": -8,
     "margin-right": -8,
-    "margin-bottom": 1,
+    "margin-bottom": -1,
 
     "modules-left": [
         "hyprland/workspaces",
@@ -79,7 +79,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 15
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"

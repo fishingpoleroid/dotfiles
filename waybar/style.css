@@ -33,6 +33,8 @@
 @define-color neongreen #00FA98;
 @define-color cpurple #BE00FA;
 
+@define-color currAccent #EB4129;
+
 @import "colors.css";
 
 * {
@@ -45,7 +47,7 @@
 
 window#waybar {
   background-color: @background;
-  color: @neongreen;
+  color: @currAccent;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -79,7 +81,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 
 #workspaces button:hover {
-  color: @cpurple;
+  color: @currAccent;
   box-shadow: @neongreen;
   text-shadow: inherit;
   background: @black;
@@ -94,7 +96,7 @@ button {
 #workspaces button {
   padding: 0 5px;
   color: @white;
-  margin: 1px -1px 1px -1px;
+  margin: 1px -6px 2px -1px;
   transition: color 200ms ease-in-out;
 }
 
@@ -103,7 +105,7 @@ button {
 }
 
 #workspaces button.active {
-  color: @neongreen;
+  color: @currAccent;
   margin: 1px -6px 2px -1px
 }
 
@@ -157,7 +159,7 @@ button {
 }
 
 #clock {
-  color: @neongreen;
+  color: @currAccent;
 }
 
 #custom-pacman {
@@ -173,7 +175,7 @@ button {
 }
 
 #network {
-  color: @neongreen;
+  color: @currAccent;
 }
 
 #network.disconnected {
@@ -186,7 +188,7 @@ button {
 }
 
 #battery {
-  color: @neongreen;
+  color: @currAccent;
 }
 
 #battery.warning:not(.charging) {
@@ -194,7 +196,7 @@ button {
 }
 
 #custom-power {
-  color: @neongreen;
+  color: @currAccent;
 }
 
 #bluetooth {
